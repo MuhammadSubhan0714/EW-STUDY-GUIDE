@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expository Writing — Final Exam Master Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --cream: #faf8f4;
+    --warm-white: #ffffff;
+    --ink: #1e1c19;
+    --ink-muted: #5a5650;
+    --ink-faint: #9a9590;
+    --sage: #3d7a5e;
+    --sage-light: #e8f3ed;
+    --sage-mid: #6aaa8a;
+    --amber: #b06a1e;
+    --amber-light: #fdf3e7;
+    --rose: #a03050;
+    --rose-light: #fdedf1;
+    --sky: #1e5f8a;
+    --sky-light: #eaf4fb;
+    --plum: #5e3a7a;
+    --plum-light: #f2ecfa;
+    --border: #e8e4dd;
+    --shadow: rgba(30,28,25,0.07);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* ── TOP NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    display: block;
+    padding: 0.85rem 1rem;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--sage); border-bottom-color: var(--sage); }
+
+  /* ── LAYOUT ── */
+  .hero {
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--sage-light);
+    color: var(--sage);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .hero p {
+    color: var(--ink-muted);
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: 15px;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+    max-width: 900px;
+    margin: 2rem auto 0;
+    padding: 0 2rem;
+  }
+  .toc-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .toc-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px var(--shadow); }
+  .toc-card .num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .toc-card .label { font-size: 13px; font-weight: 500; }
+
+  /* ── SECTIONS ── */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+  .section + .section {
+    border-top: 1px solid var(--border);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .section-num {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+  .section-title {
+    font-family: 'Lora', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 1.75rem 0 0.6rem;
+  }
+
+  p { margin-bottom: 1rem; color: var(--ink); }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── CALLOUT BOXES ── */
+  .callout {
+    border-radius: 10px;
+    padding: 1.1rem 1.25rem;
+    margin: 1.25rem 0;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .callout.sage { background: var(--sage-light); border-left: 3px solid var(--sage); }
+  .callout.amber { background: var(--amber-light); border-left: 3px solid var(--amber); }
+  .callout.rose { background: var(--rose-light); border-left: 3px solid var(--rose); }
+  .callout.sky { background: var(--sky-light); border-left: 3px solid var(--sky); }
+  .callout.plum { background: var(--plum-light); border-left: 3px solid var(--plum); }
+  .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .sage .callout-label { color: var(--sage); }
+  .amber .callout-label { color: var(--amber); }
+  .rose .callout-label { color: var(--rose); }
+  .sky .callout-label { color: var(--sky); }
+  .plum .callout-label { color: var(--plum); }
+
+  /* ── TABLE ── */
+  .table-wrap { overflow-x: auto; margin: 1.25rem 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  th {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    padding: 0.6rem 0.85rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+  }
+  td {
+    border: 1px solid var(--border);
+    padding: 0.6rem 0.85rem;
+    vertical-align: top;
+    color: var(--ink);
+  }
+  tr:nth-child(even) td { background: var(--cream); }
+
+  /* ── EXAMPLE BLOCK ── */
+  .example-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+  @media (max-width: 620px) { .example-pair { grid-template-columns: 1fr; } }
+  .example-box {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    background: var(--warm-white);
+    font-size: 13.5px;
+  }
+  .example-box .ex-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .bad .ex-label { color: var(--rose); }
+  .good .ex-label { color: var(--sage); }
+  .bad { border-top: 3px solid var(--rose); }
+  .good { border-top: 3px solid var(--sage); }
+
+  /* ── LETTER TEMPLATE ── */
+  .letter-block {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 2rem 2.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 2;
+    margin: 1.25rem 0;
+    white-space: pre-wrap;
+    position: relative;
+  }
+  .letter-annotation {
+    position: absolute;
+    right: -180px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    color: var(--sage);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .letter-wrapper { position: relative; padding-right: 200px; }
+  @media (max-width: 700px) { .letter-wrapper { padding-right: 0; } .letter-annotation { display: none; } }
+
+  /* ── PILL TAGS ── */
+  .tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 0.2rem 0.65rem;
+    border-radius: 2rem;
+    margin: 0.15rem 0.15rem 0.15rem 0;
+  }
+  .tag.sage { background: var(--sage-light); color: var(--sage); }
+  .tag.amber { background: var(--amber-light); color: var(--amber); }
+  .tag.rose { background: var(--rose-light); color: var(--rose); }
+  .tag.sky { background: var(--sky-light); color: var(--sky); }
+  .tag.plum { background: var(--plum-light); color: var(--plum); }
+
+  /* ── PRACTICE Q ── */
+  .pq-block {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1.25rem 0;
+  }
+  .pq-question {
+    background: var(--warm-white);
+    padding: 1rem 1.25rem;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+  }
+  .pq-question:hover { background: var(--cream); }
+  .pq-toggle {
+    font-size: 18px;
+    color: var(--sage);
+    font-weight: 300;
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+  .pq-answer {
+    display: none;
+    background: var(--sage-light);
+    padding: 1rem 1.25rem;
+    font-size: 13.5px;
+    border-top: 1px solid var(--border);
+    line-height: 1.75;
+  }
+  .pq-answer.open { display: block; }
+
+  /* ── STAR METHOD ── */
+  .star-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+  .star-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem;
+  }
+  .star-letter {
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .star-title { font-weight: 600; font-size: 14px; margin-bottom: 0.3rem; }
+  .star-desc { font-size: 13px; color: var(--ink-muted); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 13px;
+    color: var(--ink-faint);
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+
+  /* ── ACRONYM HIGHLIGHT ── */
+  .acro { font-weight: 700; font-style: italic; }
+
+  .inline-list { padding-left: 1.4rem; margin: 0.5rem 0 1rem; }
+  .inline-list li { margin-bottom: 0.3rem; font-size: 14px; }
+
+  .highlight-row { background: #f0faf5 !important; font-weight: 500; }
+
+  .section-divider {
+    max-width: 900px;
+    margin: 0 auto;
+    height: 1px;
+    background: var(--border);
+  }
+</style>
+</head>
+<body>
+
+<nav id="topnav">
+  <a href="#s1" class="active">7 C's</a>
+  <a href="#s2">Letter Writing</a>
+  <a href="#s3">Persuasive Messages</a>
+  <a href="#s4">Product Review</a>
+  <a href="#s5">Negotiation</a>
+  <a href="#s6">Interviews</a>
+  <a href="#s7">Practice Paper</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">NUCES Karachi — Expository Writing</div>
+  <h1>Final Exam Master Guide</h1>
+  <p>A complete, example-rich reference covering all 6 syllabus topics — built to help you score an A+.</p>
+</div>
+
+<div class="toc-grid">
+  <a class="toc-card" href="#s1"><div class="num">01</div><div class="label">7 C's of Communication</div></a>
+  <a class="toc-card" href="#s2"><div class="num">02</div><div class="label">Letter Writing</div></a>
+  <a class="toc-card" href="#s3"><div class="num">03</div><div class="label">Persuasive Messages</div></a>
+  <a class="toc-card" href="#s4"><div class="num">04</div><div class="label">Product Review</div></a>
+  <a class="toc-card" href="#s5"><div class="num">05</div><div class="label">Negotiation Skills</div></a>
+  <a class="toc-card" href="#s6"><div class="num">06</div><div class="label">Employment Interviews</div></a>
+  <a class="toc-card" href="#s7"><div class="num">07</div><div class="label">Practice Paper</div></a>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--  SECTION 1 — 7 C's                         -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section" id="s1">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <h2 class="section-title">7 C's of Communication<br><small style="font-size:0.6em;font-family:'DM Sans';font-weight:400;color:var(--ink-muted);">Focus: Completeness &amp; Correctness</small></h2>
+  </div>
+
+  <div class="callout amber">
+    <div class="callout-label">Exam Focus</div>
+    Your syllabus specifies <strong>Completeness</strong> and <strong>Correctness</strong> only. This section covers all 7 so you understand context, but exam questions will test these two most heavily.
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>C</th><th>Core Idea</th><th>Key Rule</th></tr></thead>
+      <tbody>
+        <tr class="highlight-row"><td>1</td><td>Completeness ★</td><td>All facts the reader needs for the desired reaction</td><td>Answer every question; give the 5 W's + H</td></tr>
+        <tr><td>2</td><td>Conciseness</td><td>Shortest possible without losing meaning</td><td>Cut wordy phrases; no repetition</td></tr>
+        <tr><td>3</td><td>Consideration</td><td>Write from the reader's perspective ("you-attitude")</td><td>Focus on "you," not "I/we"</td></tr>
+        <tr><td>4</td><td>Concreteness</td><td>Specific, vivid, definite — not vague</td><td>Use facts, figures, and active verbs</td></tr>
+        <tr><td>5</td><td>Clarity</td><td>Simple words, clear structure</td><td>One idea per sentence; avoid jargon</td></tr>
+        <tr class="highlight-row"><td>6</td><td>Correctness ★</td><td>Grammatically and factually accurate</td><td>Right grammar, spelling, format, tone level</td></tr>
+        <tr><td>7</td><td>Courtesy</td><td>Tactful, respectful, non-discriminatory</td><td>Avoid negative phrasing; use euphemisms</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- COMPLETENESS -->
+  <h3>1 — Completeness in Detail</h3>
+  <p>A message is complete when it contains <em>all</em> facts the reader needs. Use the <strong>5 W's + H</strong> checklist:</p>
+  <ul class="inline-list">
+    <li><strong>Who</strong> — Who is involved / who should act?</li>
+    <li><strong>What</strong> — What is the subject / action required?</li>
+    <li><strong>When</strong> — What is the deadline / time?</li>
+    <li><strong>Where</strong> — Location / venue?</li>
+    <li><strong>Why</strong> — Reason / purpose?</li>
+    <li><strong>How</strong> — Method / instructions?</li>
+  </ul>
+
+  <div class="example-pair">
+    <div class="example-box bad">
+      <div class="ex-label">✗ Incomplete</div>
+      Hi everyone, just a reminder about the meeting tomorrow. See you then!
+    </div>
+    <div class="example-box good">
+      <div class="ex-label">✓ Complete</div>
+      Hi everyone, this is a reminder about tomorrow's meeting on the new telecommuting policy. The meeting will be held on Thursday, 22 May, at 10:00 a.m. in Conference Room B, 2nd Floor. Please confirm attendance by replying to this email.
+    </div>
+  </div>
+
+  <!-- CORRECTNESS -->
+  <h3>6 — Correctness in Detail</h3>
+  <p>Correctness means no grammatical, spelling, or factual errors. It also means choosing the <em>right level of writing</em>.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Level</th><th>When to Use</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Formal</td><td>Official letters, reports, emails to superiors</td><td>"I would like to request…"</td></tr>
+        <tr><td>Informal</td><td>Colleagues you know well</td><td>"Could you send me that file today?"</td></tr>
+        <tr><td>Substandard</td><td>Never in professional writing</td><td>"gonna," "cuz," "tbh"</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout rose">
+    <div class="callout-label">Common Correctness Errors (spot &amp; fix these)</div>
+    <strong>"conservation"</strong> → should be <strong>"conversation"</strong> &nbsp;|&nbsp;
+    <strong>"two-weak deadline"</strong> → should be <strong>"two-week deadline"</strong> &nbsp;|&nbsp;
+    Comma splice: "I finished, I submitted" → "I finished; I submitted."
+  </div>
+
+  <h3>Spot-the-Error Practice</h3>
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      Q1: Identify the errors and rewrite: <em>"Hi, Thanks so much for meeting me at lunch today! I enjoyed our conservation. I'm sure the two-weak deadline won't be an issue."</em>
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>Errors:</strong> "conservation" → "conversation" (wrong word); "two-weak" → "two-week" (wrong homophone).<br><br>
+      <strong>Corrected:</strong> "Hi, Thank you for meeting me for lunch today. I enjoyed our conversation, and I look forward to working together. I am confident the two-week deadline will not be an issue."
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      Q2 (Concreteness): Rewrite: "The manager was late for the meeting."
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>Answer:</strong> "The manager, Mr. Asif, arrived 25 minutes late to the 9:00 a.m. board meeting on Monday."<br><br>
+      <em>Why?</em> Specific name, exact time delay, specific meeting — replaces vague "late."
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      Q3 (Conciseness): Shorten: "I have conducted an investigation to study the marketing strategies of all our competitors."
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>Answer:</strong> "I have investigated our competitors' marketing strategies."<br><br>
+      Cuts 8 words to 7 — remove "conducted an investigation" (wordy verb phrase) and "to study" (redundant purpose).
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      Q4 (Consideration): Rewrite with "you-attitude": "I am pleased to inform you that we have approved your loan application."
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>Answer:</strong> "Your loan application has been approved. You may collect the documents from our branch at your convenience."<br><br>
+      <em>Why?</em> Shifts focus from "I/we" to "you." The reader is the centre.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--  SECTION 2 — LETTER WRITING                -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section" id="s2">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <h2 class="section-title">Letter Writing<br><small style="font-size:0.6em;font-family:'DM Sans';font-weight:400;color:var(--ink-muted);">Full Block Format</small></h2>
+  </div>
+
+  <div class="callout sky">
+    <div class="callout-label">Key Rule — Full Block Format</div>
+    In Full Block Format, <strong>every part</strong> of the letter is aligned to the <strong>left margin</strong>. No indentation anywhere. Paragraphs are separated by a blank line.
+  </div>
+
+  <h3>The 11 Components of a Business Letter</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Part</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Letterhead / Sender's Address</td><td>Your company name + address. Skip if using printed letterhead.</td></tr>
+        <tr><td>2</td><td>Date</td><td>Full format: <em>20 December 2023</em> or <em>December 20, 2023</em></td></tr>
+        <tr><td>3</td><td>Inside Address</td><td>Recipient's name, title, company, and address.</td></tr>
+        <tr><td>4</td><td>Salutation</td><td><em>Dear Mr. Khan:</em> (formal = colon) &nbsp;|&nbsp; <em>Dear Ahmed,</em> (standard = comma)</td></tr>
+        <tr><td>5</td><td>Subject Line (optional)</td><td>RE: Training Session — May 2024</td></tr>
+        <tr><td>6</td><td>Opening Paragraph</td><td>State purpose immediately. No "I am writing to…" padding.</td></tr>
+        <tr><td>7</td><td>Body Paragraph(s)</td><td>One idea per paragraph. Support + details.</td></tr>
+        <tr><td>8</td><td>Closing Paragraph</td><td>Action required / next step / goodwill.</td></tr>
+        <tr><td>9</td><td>Complimentary Close</td><td><em>Sincerely,</em> / <em>Regards,</em> / <em>Yours faithfully,</em></td></tr>
+        <tr><td>10</td><td>Signature Block</td><td>4 blank lines → handwritten signature → typed name + title</td></tr>
+        <tr><td>11</td><td>Enclosures / CC</td><td>Enc. / CC: [Name] at the very bottom if needed</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Direct vs. Indirect Approach</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Approach</th><th>When to Use</th><th>Structure</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Direct</strong></td><td>Good news, neutral requests, routine letters</td><td>Main point → Details → Goodwill close</td></tr>
+        <tr><td><strong>Indirect</strong></td><td>Bad news, refusals, negative announcements</td><td>Buffer → Reasons → Bad news → Alternative/Goodwill</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout sage">
+    <div class="callout-label">Indirect Approach — BRAB Formula</div>
+    <strong>B</strong>uffer → <strong>R</strong>eason → <strong>A</strong>dverse news (softened) → <strong>B</strong>eneficial close
+  </div>
+
+  <h3>Sample Letter — Indirect Approach (Bad News)</h3>
+  <p><em>Scenario from your past paper: You work in IT at a hotel. Your boss arranged a training session on "Using Social Media in the Hospitality Industry." You cannot attend. Write a negative news letter using the Indirect approach, Full Block Format.</em></p>
+
+  <div class="letter-wrapper">
+  <div class="letter-block">Muhammad Subhan
+IT Department, The Pearl Continental Hotel
+Club Road, Karachi 75500
+
+22 May 2024
+
+Mr. Tariq Hussain
+Head of IT
+The Pearl Continental Hotel
+Club Road, Karachi 75500
+
+Dear Mr. Hussain:
+
+RE: Training Session — Social Media in the Hospitality Industry
+
+The upcoming training session on using social media in the
+hospitality industry is an excellent initiative, and I appreciate
+your efforts in organising this professional development opportunity
+for our department.
+
+Unfortunately, an urgent network outage at our Lahore branch
+requires my immediate on-site presence on that same date. The
+system failure has disrupted operations for over 50 hotel staff,
+and I am the only certified engineer available to resolve the
+issue. Leaving this unresolved would result in significant
+financial and operational losses for the company.
+
+I sincerely regret missing this valuable session. I would
+appreciate it if you could share the training materials or
+recording so that I may benefit from the content and apply
+the knowledge to my role.
+
+Thank you for your understanding and continued support.
+
+Sincerely,
+
+
+Muhammad Subhan
+IT Engineer, Pearl Continental Hotel
+Ext: 3412 | m.subhan@pchotel.com
+</div>
+  </div>
+
+  <div class="callout amber">
+    <div class="callout-label">Examiner's Checklist — Letter Marks Breakdown</div>
+    Format (Full Block, all components present): 5 marks &nbsp;|&nbsp; Content (correct approach, logical flow): 10 marks. Always verify: date format, colon after salutation, 4-line gap for signature, subject line.
+  </div>
+
+  <h3>Practice Questions</h3>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      PQ1: What are the components of a Full Block Format business letter? List them in order.
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      1. Sender's Address / Letterhead &nbsp;→&nbsp; 2. Date &nbsp;→&nbsp; 3. Inside Address &nbsp;→&nbsp; 4. Salutation &nbsp;→&nbsp; 5. Subject Line (optional) &nbsp;→&nbsp; 6. Opening Paragraph &nbsp;→&nbsp; 7. Body &nbsp;→&nbsp; 8. Closing Paragraph &nbsp;→&nbsp; 9. Complimentary Close &nbsp;→&nbsp; 10. Signature Block &nbsp;→&nbsp; 11. Enc./CC (if any).<br><br>
+      In Full Block Format: everything is flush left. No indentations.
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      PQ2: You are a manager. Write a letter denying an employee's request for a pay raise. Use Indirect approach.
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>Structure to follow:</strong><br>
+      <strong>Buffer:</strong> "Thank you for your continued dedication to the team and for taking the initiative to discuss your compensation…"<br><br>
+      <strong>Reasons:</strong> "As you may be aware, the company is currently undergoing a period of budget consolidation following a challenging Q4. Salary adjustments across all departments have been temporarily placed on hold until the new financial year…"<br><br>
+      <strong>Adverse News (softened):</strong> "In light of these circumstances, we are unable to process a salary increment at this time."<br><br>
+      <strong>Beneficial Close:</strong> "We will revisit compensation packages in the upcoming annual review in January 2025. Your performance continues to be valued, and we encourage you to speak with HR about our performance-linked bonus scheme, which remains active."
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--  SECTION 3 — PERSUASIVE MESSAGES           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section" id="s3">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <h2 class="section-title">Persuasive Messages</h2>
+  </div>
+
+  <h3>What Is a Persuasive Message?</h3>
+  <p>A persuasive message is designed to influence an audience's attitudes, beliefs, or behaviours — convincing them to take action, adopt a viewpoint, or support an idea.</p>
+
+  <h3>The AIDA / ANSVA Structure</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Step</th><th>Name</th><th>Purpose</th><th>Example Hook</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>Attention</td><td>Grab the reader with a powerful opening</td><td>"Did you know 80% of startups fail due to poor communication?"</td></tr>
+        <tr><td>N</td><td>Need</td><td>Identify the problem or desire</td><td>"Managing remote teams without structure leads to missed deadlines and frustration."</td></tr>
+        <tr><td>S</td><td>Satisfaction</td><td>Present your solution</td><td>"Our communication platform bridges that gap instantly."</td></tr>
+        <tr><td>V</td><td>Visualization</td><td>Paint the picture of success (or failure)</td><td>"Imagine your team hitting every deadline, from anywhere in the world."</td></tr>
+        <tr><td>A</td><td>Action</td><td>Tell them exactly what to do</td><td>"Sign up for a free 14-day trial today — no credit card needed."</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>The Three Pillars of Persuasion (Aristotle)</h3>
+  <div class="star-grid">
+    <div class="star-card">
+      <div class="star-letter" style="color:var(--sage)">E</div>
+      <div class="star-title">Ethos — Credibility</div>
+      <div class="star-desc">Establish trust. Use your authority, expertise, or reputation. "As a certified engineer with 10 years of experience…"</div>
+    </div>
+    <div class="star-card">
+      <div class="star-letter" style="color:var(--rose)">P</div>
+      <div class="star-title">Pathos — Emotion</div>
+      <div class="star-desc">Appeal to feelings — hope, fear, empathy, pride. Charity ads showing families in need use pathos.</div>
+    </div>
+    <div class="star-card">
+      <div class="star-letter" style="color:var(--sky)">L</div>
+      <div class="star-title">Logos — Logic</div>
+      <div class="star-desc">Use facts, statistics, and reasoning. "Studies show a 40% increase in productivity with structured schedules."</div>
+    </div>
+  </div>
+
+  <h3>Additional Persuasion Techniques</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Technique</th><th>How It Works</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Social Proof</td><td>Others are doing it — so should you</td><td>"Join over 1 million satisfied users."</td></tr>
+        <tr><td>Scarcity</td><td>Limited availability creates urgency</td><td>"Only 3 seats left at this price!"</td></tr>
+        <tr><td>Reciprocity</td><td>Give something first to earn a favour</td><td>Free trial → paid subscription</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Common Logical Fallacies (Know These for Exams)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Fallacy</th><th>What It Does</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Ad Hominem</td><td>Attacks the person, not the argument</td><td>"You can't trust his opinion — he failed Math."</td></tr>
+        <tr><td>Straw Man</td><td>Misrepresents the opponent's view</td><td>"People who want clean energy just want to ban all cars."</td></tr>
+        <tr><td>False Dilemma</td><td>Only two options presented (when more exist)</td><td>"You're either with us or against us."</td></tr>
+        <tr><td>Slippery Slope</td><td>One step leads inevitably to catastrophe</td><td>"If we allow calculators, students will never learn math."</td></tr>
+        <tr><td>Bandwagon Appeal</td><td>True because everyone believes it</td><td>"Everyone is using this app, so it must be best."</td></tr>
+        <tr><td>Hasty Generalization</td><td>Broad conclusion from limited evidence</td><td>"My friend got food poisoning there once — it's terrible."</td></tr>
+        <tr><td>Post Hoc</td><td>A follows B, so B caused A</td><td>"I wore red socks and aced the exam — they're lucky!"</td></tr>
+        <tr><td>Circular Reasoning</td><td>Conclusion supports the premise</td><td>"This policy is right because it is correct."</td></tr>
+        <tr><td>Red Herring</td><td>Distracts from the real issue</td><td>"Why worry about traffic when people are hungry?"</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Sample Persuasive Email — Proposal Request</h3>
+  <div class="letter-block">Subject: Proposal for a Dedicated Study Space in the CS Building
+
+Dear Dr. Malik,
+
+Engineering students at NUCES work with complex projects that
+demand uninterrupted focus, yet our current library closes at
+8:00 p.m. — hours before most of us finish our assignments.
+
+Studies from MIT and IBA Karachi show that students with access
+to 24-hour study facilities score 18% higher on technical exams.
+A dedicated, after-hours room in the CS building would directly
+address this gap for over 500 enrolled students.
+
+Imagine a space where teams can collaborate on final-year
+projects without competing for library seats or working in
+noisy cafeterias. This investment would enhance academic
+performance and reflect positively on NUCES's reputation.
+
+We respectfully request a 15-minute meeting at your convenience
+to discuss the feasibility of this proposal. A preliminary
+cost estimate and floor plan are attached.
+
+Sincerely,
+Student Representative — CS Batch 2025
+  </div>
+
+  <h3>Practice Questions</h3>
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      PQ3: Identify the logical fallacy — "If students are allowed to skip one lecture, they'll start skipping all of them and eventually drop out."
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>Slippery Slope.</strong> It assumes one small step (skipping one lecture) will inevitably lead to an extreme outcome (dropping out) without evidence for each step in between.
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      PQ4: You are writing a persuasive letter to your department head requesting a new lab computer. Write the "Attention" and "Need" paragraphs using ANSVA.
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>Attention:</strong> "Did you know that 73% of CS students at top universities work on machines with at least 16 GB of RAM? Our students are competing in the same job market with computers that were purchased in 2016."<br><br>
+      <strong>Need:</strong> "The current machines in Lab 4 frequently crash during compilation of large codebases, causing students to lose unsaved work and miss assignment deadlines. This directly impacts academic performance and student satisfaction scores."
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--  SECTION 4 — PRODUCT REVIEW                -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section" id="s4">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <h2 class="section-title">Product Review Writing</h2>
+  </div>
+
+  <h3>What Makes a Good Product Review?</h3>
+  <p>A product review is an evaluative piece that balances personal experience with objective assessment. It informs readers and helps them make purchasing decisions.</p>
+
+  <div class="callout sage">
+    <div class="callout-label">CRAFT Formula for Product Reviews</div>
+    <strong>C</strong>ontext (who you are, how you use it) → <strong>R</strong>atings summary → <strong>A</strong>dvantages (pros, specific) → <strong>F</strong>laws (cons, honest) → <strong>T</strong>akeaway (final verdict + who it's for)
+  </div>
+
+  <h3>Structure of a Product Review</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Section</th><th>What to Include</th><th>Length</th></tr></thead>
+      <tbody>
+        <tr><td>Introduction</td><td>Product name, category, price range, your context of use</td><td>2–3 sentences</td></tr>
+        <tr><td>Key Features</td><td>Specifications and standout features — be specific, not vague</td><td>1 paragraph or list</td></tr>
+        <tr><td>Performance</td><td>How it worked in real use — results, speed, reliability</td><td>2 paragraphs</td></tr>
+        <tr><td>Pros &amp; Cons</td><td>Balanced, honest list — minimum 3 each</td><td>Bulleted list</td></tr>
+        <tr><td>Verdict</td><td>Score/rating, final recommendation, target audience</td><td>2–3 sentences</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Sample Product Review — Laptop</h3>
+  <div class="letter-block">★★★★☆  HP Pavilion 15 (Core i5, 16GB RAM, 512GB SSD)
+Price Range: PKR 95,000 — 110,000
+
+INTRODUCTION
+I purchased the HP Pavilion 15 three months ago for use as a
+CS student at NUCES. My workload includes programming in C++,
+running virtual machines, and compiling large codebases daily.
+
+KEY FEATURES
+Processor: Intel Core i5-1235U (12th Gen) | RAM: 16 GB DDR4
+Storage: 512 GB NVMe SSD | Display: 15.6" FHD IPS (250 nits)
+Battery: 41 Whr | Weight: 1.75 kg
+
+PERFORMANCE
+The laptop handles everyday programming tasks and multi-tab
+browsing without noticeable lag. Compiling a mid-size C++
+project takes approximately 12 seconds — acceptable for the
+price range. The NVMe SSD boot time of 8 seconds is excellent.
+
+However, sustained workloads cause the fan to become audibly
+loud within 10 minutes, and the chassis heats noticeably
+around the keyboard area during long sessions.
+
+PROS:
+• Fast SSD significantly improves compilation and boot times
+• 16 GB RAM handles multiple IDEs and a browser simultaneously
+• IPS panel offers accurate colours — good for UI design work
+• Affordable for its specifications in the Pakistani market
+
+CONS:
+• Thermal performance poor under sustained load
+• 250-nit display is dim in outdoor / bright-room conditions
+• Battery life averages 4.5 hours — below the advertised 8 hrs
+• Build quality feels plastic-heavy at this price
+
+VERDICT  |  8 / 10
+The HP Pavilion 15 is a capable, budget-friendly laptop for
+CS students who work primarily indoors. Recommended for
+programmers and students — less ideal for video editors or
+those who travel frequently with the laptop unplugged.
+  </div>
+
+  <h3>Language Tips for Reviews</h3>
+  <ul class="inline-list">
+    <li>Use <strong>specific quantities</strong>: "boots in 8 seconds" not "boots fast"</li>
+    <li>Use <strong>hedged language</strong> for opinions: "in my experience," "appears to"</li>
+    <li>Balance positives and negatives — purely positive reviews lose credibility</li>
+    <li>Write for the <em>reader's</em> use case, not just your own</li>
+    <li>Avoid filler: "This product is amazing!" → "Delivers reliable performance under daily academic workloads"</li>
+  </ul>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      PQ5: Write a 3-sentence introduction for a review of the Samsung Galaxy A55 aimed at NUCES students.
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      "I have been using the Samsung Galaxy A55 for two months as my primary device for studies and social connectivity at NUCES Karachi. Priced around PKR 85,000, it targets mid-range buyers who want a flagship-like experience without the flagship price tag. As a student who relies heavily on camera quality for documentation and all-day battery life for on-campus use, I put this phone through rigorous daily testing."
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--  SECTION 5 — NEGOTIATION                   -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section" id="s5">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <h2 class="section-title">Negotiation Skills</h2>
+  </div>
+
+  <h3>What Is Negotiation?</h3>
+  <p>Negotiation is a process of dialogue between two or more parties to reach a mutually acceptable agreement. In professional communication, it involves persuasion, compromise, and strategic communication.</p>
+
+  <h3>Key Negotiation Concepts</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Concept</th><th>Meaning</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><strong>BATNA</strong></td><td>Best Alternative To a Negotiated Agreement — your fallback option</td><td>If the supplier won't lower price, you'll switch to a competitor</td></tr>
+        <tr><td><strong>ZOPA</strong></td><td>Zone Of Possible Agreement — the range where both parties can agree</td><td>You'll pay PKR 50K–70K; they'll accept 60K–80K → ZOPA = 60K–70K</td></tr>
+        <tr><td><strong>Anchoring</strong></td><td>Setting the first offer to frame the negotiation</td><td>Quoting PKR 120K when you expect to settle at 95K</td></tr>
+        <tr><td><strong>Win-Win</strong></td><td>Both parties gain value — ideal outcome</td><td>Bulk discount in exchange for long-term contract</td></tr>
+        <tr><td><strong>Win-Lose</strong></td><td>One party gains at the other's expense</td><td>Forcing a take-it-or-leave-it offer</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Stages of Negotiation</h3>
+  <ol class="inline-list">
+    <li><strong>Preparation</strong> — Research, know your BATNA, set objectives</li>
+    <li><strong>Opening</strong> — Set the tone, build rapport, state your position</li>
+    <li><strong>Exploration</strong> — Ask questions, understand the other party's needs</li>
+    <li><strong>Bargaining</strong> — Make and counter offers, use concessions strategically</li>
+    <li><strong>Closing</strong> — Reach agreement, confirm in writing</li>
+    <li><strong>Follow-up</strong> — Implement terms, maintain relationship</li>
+  </ol>
+
+  <h3>Negotiation Language Bank</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Function</th><th>Useful Phrases</th></tr></thead>
+      <tbody>
+        <tr><td>Opening position</td><td>"Our initial offer is…" / "We are looking for…"</td></tr>
+        <tr><td>Making a concession</td><td>"We could consider… if you are able to…"</td></tr>
+        <tr><td>Rejecting politely</td><td>"That falls outside what we can accommodate, however…"</td></tr>
+        <tr><td>Seeking clarification</td><td>"Could you elaborate on what you mean by…?"</td></tr>
+        <tr><td>Reaching agreement</td><td>"I think we have a basis for moving forward…"</td></tr>
+        <tr><td>Stalling for time</td><td>"I'll need to check with my team before confirming."</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout plum">
+    <div class="callout-label">Negotiation vs. Persuasion</div>
+    <strong>Persuasion</strong> is one-directional — you convince someone to adopt your position.<br>
+    <strong>Negotiation</strong> is bilateral — both parties move toward a middle ground. Effective negotiators use persuasive techniques <em>within</em> negotiation.
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      PQ6: What is BATNA and why is it important in a negotiation?
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>BATNA</strong> stands for Best Alternative To a Negotiated Agreement. It is the most favourable outcome a party can achieve if current negotiations fail.<br><br>
+      It is important because: (a) it gives you a clear "walk-away" point, preventing you from accepting a bad deal; (b) the stronger your BATNA, the greater your negotiating power; (c) knowing the other party's BATNA helps you understand how far they will negotiate.
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      PQ7: You are negotiating a salary with a potential employer. Write 3–4 sentences demonstrating effective negotiation language.
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      "Thank you for the offer of PKR 80,000 per month. Based on my research into market rates for this role and my 2 years of relevant internship experience, I was hoping for something closer to PKR 95,000. I understand budget constraints may exist, so I am open to discussing other components such as performance bonuses, flexible hours, or an accelerated six-month review. Could we explore what flexibility exists within the overall package?"
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--  SECTION 6 — EMPLOYMENT INTERVIEWS         -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section" id="s6">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <h2 class="section-title">Employment Interviews</h2>
+  </div>
+
+  <h3>Types of Interviews — The Quick-Reference Table</h3>
+  <div class="callout amber">
+    <div class="callout-label">High-Frequency Exam Pattern</div>
+    Your 2023 past paper asked you to <em>match definitions to interview types</em>. Learn these definitions cold.
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Type</th><th>Definition</th><th>Key Feature</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Structured</strong></td><td>A fixed set of questions is asked of all candidates</td><td>Allows fair comparison</td></tr>
+        <tr><td><strong>Unstructured</strong></td><td>Open-ended; interviewer adapts questions based on responses</td><td>Conversational, exploratory</td></tr>
+        <tr><td><strong>Situational</strong></td><td>Candidate explains how they would handle hypothetical scenarios</td><td>"What would you do if…?"</td></tr>
+        <tr><td><strong>Behavioural</strong></td><td>Candidate gives past examples to demonstrate competencies</td><td>"Tell me about a time when…"</td></tr>
+        <tr><td><strong>Panel</strong></td><td>One candidate faces multiple interviewers simultaneously</td><td>Multiple perspectives</td></tr>
+        <tr><td><strong>Group</strong></td><td>Multiple candidates assessed together; group dynamics observed</td><td>Teamwork &amp; leadership visible</td></tr>
+        <tr><td><strong>Working/Practical</strong></td><td>Candidate performs actual job-related tasks</td><td>Skills demonstrated live</td></tr>
+        <tr><td><strong>Stress</strong></td><td>Designed to test composure under pressure</td><td>Challenging/provocative questions</td></tr>
+        <tr><td><strong>Screening</strong></td><td>Initial filter to separate qualified from unqualified candidates</td><td>Often by phone or HR</td></tr>
+        <tr><td><strong>Serial/Rotating</strong></td><td>Multiple one-on-one interviews with different interviewers in sequence</td><td>Each interviewer has a fresh view</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>The 5 Stages of the Interview Process</h3>
+  <ol class="inline-list">
+    <li><strong>Icebreaker</strong> — Greetings, first impression, small talk</li>
+    <li><strong>Personal Qualifications</strong> — Skills, experience, accomplishments</li>
+    <li><strong>Organisation &amp; Position</strong> — Your knowledge of the company</li>
+    <li><strong>Your Questions</strong> — You ask about the role and team</li>
+    <li><strong>Close &amp; Follow-up</strong> — Thank the panel; send a thank-you note within 24 hrs</li>
+  </ol>
+
+  <h3>The STAR Technique (Behavioural Answers)</h3>
+  <div class="star-grid">
+    <div class="star-card">
+      <div class="star-letter" style="color:var(--sky)">S</div>
+      <div class="star-title">Situation</div>
+      <div class="star-desc">Describe the context and background. Keep it brief — 1–2 sentences.</div>
+    </div>
+    <div class="star-card">
+      <div class="star-letter" style="color:var(--amber)">T</div>
+      <div class="star-title">Task</div>
+      <div class="star-desc">What was your specific responsibility or challenge?</div>
+    </div>
+    <div class="star-card">
+      <div class="star-letter" style="color:var(--sage)">A</div>
+      <div class="star-title">Action</div>
+      <div class="star-desc">The steps YOU took. Use "I," not "we." This is the meatiest part.</div>
+    </div>
+    <div class="star-card">
+      <div class="star-letter" style="color:var(--rose)">R</div>
+      <div class="star-title">Result</div>
+      <div class="star-desc">Measurable, positive outcome. Quantify where possible.</div>
+    </div>
+  </div>
+
+  <h3>Standard Interview Questions &amp; Model Answers</h3>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      "Tell me about yourself." — How should you structure this?
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      Structure: <strong>Present → Past → Future</strong> (1–2 minutes max)<br><br>
+      <strong>Model Answer:</strong> "I am a final-year Computer Science student at NUCES Karachi, specialising in software engineering. Over the past two years, I have completed two internships — one at a fintech startup where I built REST APIs, and another at a logistics company where I optimised their database queries, reducing load time by 35%. I am now looking for a full-time role where I can apply my backend development skills to real-world problems, and your company's focus on scalable systems is exactly the environment I am hoping to grow in."
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      "Describe your most challenging academic project." (from your 2023 paper)
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>Using STAR:</strong><br>
+      <strong>S:</strong> "In my third semester, my team of four was tasked with building a fully functional hospital management system in eight weeks using Java and MySQL."<br><br>
+      <strong>T:</strong> "I was responsible for the database architecture and API integration, while also coordinating team progress as the unofficial project lead."<br><br>
+      <strong>A:</strong> "When two team members fell ill mid-project, I redistributed tasks, created a priority-based schedule, held daily 20-minute stand-up calls, and put in extra hours to cover the backend. I also documented everything systematically so the team could resume quickly."<br><br>
+      <strong>R:</strong> "We submitted on time and received a distinction — 92/100. My professor cited our documentation as one of the strongest submitted that semester."
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      "Why do you think you are the most suitable candidate for this internship?" (from your 2023 paper)
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      "I believe I am a strong fit for three reasons. First, my technical skills align precisely with the role — I have worked with the exact stack you use (Python, Django, PostgreSQL) in both coursework and a freelance project. Second, I bring an ability to work under pressure: I have consistently met deadlines across intensive CS semesters at NUCES while maintaining a GPA above 3.5. Third, I am genuinely invested in your company's mission — I have followed your product development blog for six months and came into this interview with three ideas for features that could improve user retention. I would bring that same proactive attitude to the internship."
+    </div>
+  </div>
+
+  <h3>Qualities Employers Seek (Examiner Favourites)</h3>
+  <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin:0.75rem 0 1.25rem;">
+    <span class="tag sage">Communication</span>
+    <span class="tag sage">Teamwork</span>
+    <span class="tag amber">Problem Solving</span>
+    <span class="tag amber">Initiative</span>
+    <span class="tag sky">Adaptability</span>
+    <span class="tag sky">Integrity</span>
+    <span class="tag rose">Drive for Results</span>
+    <span class="tag plum">Leadership</span>
+    <span class="tag plum">Commercial Awareness</span>
+    <span class="tag sage">Enthusiasm</span>
+  </div>
+
+  <h3>What Creates a Bad Impression</h3>
+  <ul class="inline-list">
+    <li>Poor personal appearance / not dressed professionally</li>
+    <li>Negative attitude — making excuses, criticising previous employers</li>
+    <li>Lack of preparation — unable to answer basic company questions</li>
+    <li>Failure to give concrete examples of skills (never say "I am a team player" without proof)</li>
+    <li>Over-emphasis on salary in early rounds</li>
+    <li>Giving one-word "yes/no" answers</li>
+  </ul>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      PQ8: Match — "An interview in which a candidate is required to perform a task."
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>Working Interview</strong> (also called Practical Interview). The candidate demonstrates actual job skills live — e.g. a coding test, a sample presentation, or a writing exercise.
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      PQ9: Match — "An interview conducted to separate deserving candidates from the less proficient ones."
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>Screening Interview.</strong> This is typically an initial HR phone call or short online test used to filter the applicant pool before detailed interviews begin.
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      PQ10: Match — "An interview in which a candidate is given an imaginary situation and asked how they would act."
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>Situational Interview.</strong> Example question: "What would you do if you discovered a critical bug in the system one hour before a major product launch?"
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--  SECTION 7 — PRACTICE PAPER                -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section" id="s7">
+  <div class="section-header">
+    <div class="section-num">07</div>
+    <h2 class="section-title">Full Practice Paper</h2>
+  </div>
+
+  <div class="callout sky">
+    <div class="callout-label">Instructions</div>
+    Time: 2 hours &nbsp;|&nbsp; Total Marks: 60 &nbsp;|&nbsp; Answer ALL questions &nbsp;|&nbsp; Show question numbers clearly.
+  </div>
+
+  <h3>Q1 — 7 C's of Communication (20 marks)</h3>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      (a) Rewrite the following 5 sentences to make them more <em>Courteous and Considerate</em>. [5 marks]
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>Original → Rewritten:</strong><br><br>
+      1. "Your report is not good." → "The report would benefit from more specific data and clearer recommendations. I would be happy to discuss revisions with you."<br>
+      2. "Every person should submit his CNIC." → "All employees are kindly requested to submit their CNIC to the secretary by 27 May."<br>
+      3. "You have failed to get the contract." → "Unfortunately, the contract was awarded to another firm this time. We appreciate your effort and look forward to future opportunities."<br>
+      4. "It is impossible to open an account today." → "Accounts opened after 3:00 p.m. are processed the next business day. You are welcome to complete your registration tomorrow morning."<br>
+      5. "We don't refund if the item is soiled." → "Refunds are available for items returned in their original condition within 7 days of purchase."
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      (b) Make the following 5 sentences more <em>Concrete</em>. [5 marks]
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      1. "The manager was late for the meeting." → "Mr. Raza arrived 20 minutes late to the 10:00 a.m. budget review on Thursday."<br>
+      2. "We spent a lot of time on this project and need more." → "We have invested 340 hours over six weeks and require an additional two weeks to complete testing."<br>
+      3. "Many students missed the exam due to rains." → "Forty-three students were absent from the Thursday morning exam due to the heavy monsoon rainfall."<br>
+      4. "Due to insufficient staff, we could not install software on every computer." → "With only 2 technicians available, we installed the software on 18 of the 30 computers in Lab 3."<br>
+      5. "The teacher gave the student negative feedback." → "Ms. Nadia told the student that his 500-word report lacked a clear thesis and contained four grammatical errors."
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      (c) Make the following 5 wordy sentences <em>Concise</em>. [5 marks]
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      1. "I have conducted an investigation to study the marketing strategies of all our competitors." → "I investigated our competitors' marketing strategies."<br>
+      2. "The report is an attempt to identify the causes behind the collapse of the bridge." → "The report identifies the causes of the bridge collapse."<br>
+      3. "This manual was prepared to aid our dealers in being helpful to customers." → "This manual helps our dealers assist customers."<br>
+      4. "It is the responsibility of our Production Department to meet the requirements of Sales." → "Production must meet Sales requirements."<br>
+      5. "In spite of the fact that it's a longer commute, I made the decision to accept the job." → "Despite the longer commute, I accepted the job."
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      (d) Identify and explain the logical fallacy: "Everyone at this office uses Brand X pens, so they must be the best pens available." [5 marks]
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>Fallacy: Bandwagon Appeal</strong><br><br>
+      This fallacy assumes that because a majority of people do something or use something, it must be correct, superior, or true. Popularity is used as a substitute for evidence.<br><br>
+      <strong>Why it is flawed:</strong> The fact that all office members use Brand X pens does not objectively prove they are the best pens. It may simply mean the company purchases them in bulk for cost reasons, or staff have never been offered an alternative. Quality must be evaluated on objective criteria such as durability, ink quality, and ergonomics — not group usage.
+    </div>
+  </div>
+
+  <h3>Q2 — Letter Writing [15 marks]</h3>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      Write a formal business letter using the <em>Full Block Format</em> and the <em>Indirect Approach</em>. Scenario: You are the HR Manager at TechSoft Pvt. Ltd. Write a letter to Ms. Aiman Qureshi declining her application for a Software Engineer position, but encouraging her to apply for future vacancies. [15 marks — Format: 5, Content: 10]
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+<strong>MODEL ANSWER:</strong>
+
+TechSoft Pvt. Ltd.
+Office 7, SITE Industrial Area
+Karachi 75700
+
+22 May 2024
+
+Ms. Aiman Qureshi
+B-14, Block 4, Gulshan-e-Iqbal
+Karachi 75300
+
+Dear Ms. Qureshi:
+
+RE: Application for Software Engineer Position — REF 2024/SE/04
+
+Thank you for your interest in TechSoft Pvt. Ltd. and for the
+time you invested in your application for the Software Engineer
+position. We received an exceptionally strong pool of over 150
+applications for this role, which reflects well on the growing
+talent in Pakistan's technology sector.
+
+After a thorough review of all applications, the selection
+committee found that several candidates demonstrated a more
+advanced level of experience with our specific technology stack
+— particularly in microservices architecture and cloud
+deployment — which are central to the role's requirements at
+this stage.
+
+For this reason, we are unable to offer you the position at
+this time. We do recognise the solid academic foundation
+reflected in your portfolio and your enthusiasm for the field.
+
+We would encourage you to apply for future openings at
+TechSoft that align with your developing skill set. We will
+retain your profile in our talent database for six months and
+will reach out if a suitable opportunity arises. In the
+meantime, you may follow our careers page at techsoft.com.pk
+for upcoming vacancies.
+
+We wish you every success in your career.
+
+Sincerely,
+
+
+
+Hira Bilal
+HR Manager, TechSoft Pvt. Ltd.
+hira.bilal@techsoft.com.pk
+Tel: 021-3456-7890
+    </div>
+  </div>
+
+  <h3>Q3 — Persuasive Message [10 marks]</h3>
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      Write a persuasive email to your university's Dean requesting that the university introduce a mental health counselling service for students. Use the ANSVA structure. [10 marks]
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+Subject: Proposal: Student Mental Health Counselling Service at NUCES
+
+Dear Dean Abdullah,
+
+ATTENTION:
+One in four university students in Pakistan experiences significant
+anxiety or depression during their academic career, yet fewer
+than 10% ever seek formal support — not because they don't need
+it, but because none is available on campus.
+
+NEED:
+As NUCES students navigate demanding workloads, financial
+pressures, and career uncertainty simultaneously, the absence
+of accessible mental health support creates a silent crisis.
+Last semester, three students in the CS department withdrew
+mid-year. In anonymous surveys, students consistently cite
+"stress and mental exhaustion" as the primary reason for
+academic underperformance.
+
+SATISFACTION:
+I respectfully propose the establishment of a Student
+Counselling Centre staffed by one qualified psychologist,
+offering 30-minute confidential sessions. An initial budget
+of PKR 200,000 per semester would cover a part-time specialist.
+
+VISUALIZATION:
+Imagine a NUCES where students seek help before reaching
+breaking point — where GPA averages improve, dropout rates
+fall, and our graduates enter the workforce as resilient,
+healthy professionals. Peer institutions like LUMS and IBA
+Karachi have already reported measurable improvements in
+student retention after introducing similar services.
+
+ACTION:
+I would be grateful for 20 minutes of your time to present
+this proposal in full. I am available any day this week at
+your convenience. My contact is below.
+
+Respectfully yours,
+Muhammad Subhan
+CS Student, Batch 2025 | 0312-XXXXXXX
+    </div>
+  </div>
+
+  <h3>Q4 — Interviews [15 marks]</h3>
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      (a) Match each definition to its correct interview type. [6 marks] — See definitions below.
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      1. "Separates deserving candidates from less proficient ones." → <strong>Screening Interview</strong><br>
+      2. "Candidate given a hypothetical situation and asked how they'd act." → <strong>Situational Interview</strong><br>
+      3. "Interviewer uses general themes rather than fixed questions." → <strong>Unstructured Interview</strong><br>
+      4. "Candidate required to perform a task." → <strong>Working Interview</strong><br>
+      5. "Candidate provides examples from past history to demonstrate suitability." → <strong>Behavioural Interview</strong><br>
+      6. "Candidate participates in a group discussion with other candidates." → <strong>Group Interview</strong>
+    </div>
+  </div>
+
+  <div class="pq-block">
+    <div class="pq-question" onclick="toggle(this)">
+      (b) Using the STAR technique, write a response to: "Describe a time you worked successfully in a team despite facing challenges." [9 marks]
+      <span class="pq-toggle">+</span>
+    </div>
+    <div class="pq-answer">
+      <strong>S — Situation:</strong> "During my second year at NUCES, my group of five was assigned to build a fully functional e-commerce prototype for our Software Engineering course. Two weeks before the deadline, our team leader fell ill and withdrew from the project."<br><br>
+      <strong>T — Task:</strong> "As the member with the strongest project management background, I stepped into the coordination role while continuing my own development work on the payment module."<br><br>
+      <strong>A — Action:</strong> "I redistributed the leader's responsibilities fairly among the remaining four members, created a shared Trello board to track progress daily, and scheduled two one-hour sessions per week to review code and resolve blockers. When one member struggled with the database design, I arranged a two-hour peer-tutoring session that resolved the issue."<br><br>
+      <strong>R — Result:</strong> "We submitted the project on time and received 88/100. Our professor specifically commended our team's communication and final presentation. The experience taught me that effective leadership is often about creating clarity and support rather than individual output."
+    </div>
+  </div>
+</div>
+
+<footer>
+  Expository Writing Final Exam Master Guide &nbsp;·&nbsp; NUCES Karachi &nbsp;·&nbsp; Based on course materials, past paper 2023, and extended examples &nbsp;·&nbsp; Good luck!
+</footer>
+
+<script>
+  function toggle(el) {
+    const ans = el.nextElementSibling;
+    const tog = el.querySelector('.pq-toggle');
+    ans.classList.toggle('open');
+    tog.textContent = ans.classList.contains('open') ? '−' : '+';
+  }
+
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('nav a');
+
+  function updateNav() {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+</script>
+</body>
+</html>
